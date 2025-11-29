@@ -718,6 +718,9 @@ class WeActEPaper2P9In3C : public WaveshareEPaperBWR {
 
   void deep_sleep() override;
 
+  // Ensure there's an out-of-line key function: declare virtual destructor
+  virtual ~WeActEPaper2P9In3C();
+
   void setup() override;
   void initialize() override;
 

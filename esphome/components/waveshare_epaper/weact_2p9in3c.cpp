@@ -54,7 +54,7 @@ void WeActEPaper2P9In3C::dump_config() {
   LOG_PIN("  Reset Pin: ", this->reset_pin_)
   LOG_PIN("  DC Pin: ", this->dc_pin_)
   LOG_PIN("  Busy Pin: ", this->busy_pin_)
-  LOG_UPDATE_INTERVAL(this)
+  LOG_UPDATE_INTERVAL(this);
 }
 
 // Device lifecycle
@@ -164,6 +164,9 @@ void WeActEPaper2P9In3C::display() {
   this->is_busy_ = true;
   this->full_update_();
 }
+
+// Provide an out-of-line destructor so the compiler emits the vtable
+WeActEPaper2P9In3C::~WeActEPaper2P9In3C() {}
 
 }  // namespace waveshare_epaper
 }  // namespace esphome
